@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppsCenter</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img class="logo" src="../assets/images/AppsCenter.png">
+        </header>
+        <form class="app-creation needs-validation" id="appForm" novalidate>
+            <label class="form-label">app name*: </label>
+            <input pattern="[A-Za-z0-9]{4,30}$" type="text" class="form-control form-control-sm input-fix"
+                placeholder="App name" id="appName" required>
+            <br>
+            <label class="form-label">app price*: </label>
+            <input pattern="^[0-9]*\.?[0-9]*$" class="form-control form-control-sm input-fix" type="text"
+                placeholder="App price in $" id="priceInput" required>
+            <br>
+            <label class="form-label">app description: </label>
+            <textarea pattern="[A-Za-z0-9]{0,500}$" class="form-control form-control-sm input-fix" id="appDescription"
+                placeholder="app description:"></textarea>
+            <br>
+            <label class="form-label">company name: </label>
+            <input pattern="[A-Za-z0-9]{0,30}$" class="form-control form-control-sm input-fix" type="text"
+                id="companyName" placeholder="company name:">
+            <br>
+            <label class="form-label">image url: </label>
+            <input pattern="^([a-zA-Z0-9\s\._-]+)$" class="form-control form-control-sm input-fix" type="text"
+                id="imageUrl" name="imageUrl" placeholder="image url">
+            <br>
+            <button class="btn btn-success add-app publish-button" type="submit">publish application</button>
+            <br><br>
+            <label class="form-label"><strong>* - required</strong></label>
+        </form>
+    </div>
+    <script type="module" src="../controllers/AddApp.js"></script>
+    <script type="module" src="../services/applicationService.js"></script>
+</body>
+
+</html>
